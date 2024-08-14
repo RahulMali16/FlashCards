@@ -1,0 +1,102 @@
+/* CreateQuestion.css */
+
+form {
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f7f9fc;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+form div {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #333;
+    font-size: 16px;
+}
+
+input[type="text"] {
+    width: calc(100% - 10px);
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+input[type="text"]:focus {
+    border-color: #007bff;
+}
+
+input[type="checkbox"] {
+    margin-right: 8px;
+}
+
+button {
+    padding: 10px 15px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s;
+    margin-top: 10px;
+    display: inline-block;
+}
+
+button:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+}
+
+button[type="submit"] {
+    width: 100%;
+    background-color: #28a745;
+}
+
+button[type="submit"]:hover {
+    background-color: #218838;
+}
+
+button[type="button"] {
+    background-color: #ffc107;
+    color: #333;
+}
+
+button[type="button"]:hover {
+    background-color: #e0a800;
+}
+
+button[type="button"].remove-answer {
+    background-color: #ff4d4d;
+    margin-left: 10px;
+}
+
+button[type="button"].remove-answer:hover {
+    background-color: #ff1a1a;
+}
+
+.answer-list div {
+    display: flex;
+    align-items: center;
+}
+
+.answer-list input[type="text"] {
+    flex: 1;
+    margin-right: 10px;
+}
+
+.answer-list label {
+    margin-right: 10px;
+}

@@ -1,14 +1,14 @@
 import React from 'react';
 import CreateQuestionForm from './CreateQuestion';
-import QuestionList from './QuestionList';
-import FlashcardManager from './FlashCardManager';
+
+import FlashCardManager from './FlashCardManager';
 
 const QuestionManager = () => {
     return (
         <div>
             <CreateQuestionForm onQuestionCreated={() => {}} />
-            {/* <QuestionList /> */}
-            <FlashcardManager />
+           
+            <FlashCardManager />
         </div>
     );
 };

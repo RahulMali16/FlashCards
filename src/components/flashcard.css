@@ -1,17 +1,8 @@
-/* flashcard.css */
-
-.flashcard-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh; /* Full viewport height */
-    background-color: #f0f0f0; /* Light gray background */
-}
-
 .flashcard {
     width: 300px;
     height: 200px;
-    perspective: 1000px; /* Perspective to give a 3D effect */
+    perspective: 1000px;
+    margin: 20px auto;
 }
 
 .flashcard-inner {
@@ -35,19 +26,13 @@
     padding: 20px;
     box-sizing: border-box;
     border-radius: 10px;
-}
-
-.flashcard-front {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     background-color: #fff;
     color: #333;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .flashcard-back {
-    background-color: #fff;
-    color: #333;
     transform: rotateY(180deg);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .flashcard .flashcard-inner.flip {
@@ -70,22 +55,75 @@
     list-style-type: none;
     padding: 0;
     margin: 0;
+    text-align: center;
 }
 
 .answer-list li {
-    padding: 5px;
+    padding: 10px;
     border: 1px solid #ddd;
     border-radius: 5px;
-    margin-bottom: 5px;
+    margin-bottom: 10px;
     background-color: #fafafa;
+    position: relative;
 }
 
-.correct-answer {
-    color: green;
-    font-weight: bold;
+.answer-list li .delete-answer-button {
+    background-color: #ff4d4d;
+    color: white;
+    border: none;
+    padding: 5px 8px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 0.8em;
+    transition: background-color 0.3s, transform 0.3s;
+    margin-top: 5px;
+    display: block;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-.incorrect-answer {
-    color: red;
-    font-weight: normal;
+.answer-list li .delete-answer-button:hover {
+    background-color: #ff1a1a;
+    transform: scale(1.05);
+}
+
+.delete-button {
+    background-color: #ff4d4d;
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 0.9em;
+    transition: background-color 0.3s, transform 0.3s;
+    margin-top: 10px;
+}
+
+.delete-button:hover {
+    background-color: #ff1a1a;
+    transform: scale(1.05);
+}
+
+.navigation-buttons {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.navigation-buttons button {
+    padding: 8px 16px;
+    font-size: 0.9em;
+    cursor: pointer;
+    margin: 0 5px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: #fff;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.navigation-buttons button:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
 }

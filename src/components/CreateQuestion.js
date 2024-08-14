@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
+import './CreateQuestion.css';
 import { createQuestion, createAnswer } from '../utils';
 
-const CreateQuestion= ({ onQuestionCreated }) => {
+const CreateQuestion = ({ onQuestionCreated }) => {
     const [questionText, setQuestionText] = useState('');
     const [answers, setAnswers] = useState([{ text: '', isCorrect: false }]);
 
@@ -23,14 +24,23 @@ const CreateQuestion= ({ onQuestionCreated }) => {
     const handleSubmit = async (e) => {
         e.preventDefault();
 
-        // Create question
         const question = await createQuestion(questionText);
         if (question) {
-            // Create answers associated with the question
+            const createdAnswers = [];
             for (const answer of answers) {
-                await createAnswer(answer.text, question.result.id, answer.isCorrect);
+                const createdAnswer = await createAnswer(answer.text, question.result.id, answer.isCorrect);
+                if (createdAnswer) createdAnswers.push(createdAnswer.result);
             }
-            onQuestionCreated(question);
+
+            const newQuestion = {
+                ...question.result,
+                answers: createdAnswers
+            };
+
+            onQuestionCreated(newQuestion);
+
+         
+            window.location.reload();
         }
 
         setQuestionText('');
